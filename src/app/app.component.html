@@ -1,21 +1,180 @@
 <clr-main-container>
-  <clr-header>
-    {{ pageTitle }}
+  <clr-header class="header-5">
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon shape="data-cluster"></clr-icon>
+        <span class="title">{{ pageTitle }}</span>
+      </a>
+    </div>
+    <form class="search">
+      <label for="search_input">
+        <input
+          id="search_input"
+          type="text"
+          placeholder="Search for a product..."
+        />
+      </label>
+    </form>
+    <div class="header-actions">
+      <!-- <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
+        <clr-icon shape="cog"></clr-icon>
+      </a> -->
+      <a href="javascript://" class="nav-link nav-icon-text">
+        <clr-icon shape="user"></clr-icon>
+        <span class="nav-text">Jamal Guyo</span>
+      </a>
+      <clr-dropdown>
+        <button
+          class="nav-icon"
+          clrDropdownTrigger
+          aria-label="toggle settings menu"
+        >
+          <clr-icon shape="cog"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="..." clrDropdownItem>About</a>
+          <a href="..." clrDropdownItem>Preferences</a>
+          <a href="..." clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
   </clr-header>
   <!-- <nav class="subnav" [clr-nav-level]="1">
-    subnav
-  </nav>
+
+  </nav> -->
   <div class="content-container">
     <main class="content-area">
-      content area
+      <router-outlet></router-outlet>
     </main>
     <nav class="sidenav" [clr-nav-level]="2">
-      sidenav
+      <section class="sidenav-content">
+        <a
+          class="nav-link"
+          [routerLink]="['welcome']"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Welcome
+        </a>
+        <a
+          class="nav-link"
+          [routerLink]="['products-list']"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Product List
+        </a>
+        <section class="nav-group collapsible">
+          <input id="clarity-demo" type="checkbox" />
+          <label for="clarity-demo">Clarity Demo</label>
+          <ul class="nav-list">
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-accordion']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Accordion</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-alerts']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Alerts</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-badges']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Badges</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-buttons']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Buttons</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-button-group']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Button Group</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-cards']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Cards</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-checkboxes']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Checkboxes</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-datagrid']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >DataGrid</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-datepicker']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Date Picker</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link"
+                [routerLink]="['clr-dropdowns']"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Dropdowns</a
+              >
+            </li>
+            <li><a class="nav-link">Forms</a></li>
+            <li><a class="nav-link">Grid</a></li>
+            <li><a class="nav-link">Header</a></li>
+            <li><a class="nav-link">inputs</a></li>
+            <li><a class="nav-link">Labels</a></li>
+            <li><a class="nav-link">Lists</a></li>
+            <li><a class="nav-link">Login Page</a></li>
+            <li><a class="nav-link">Modals</a></li>
+            <li><a class="nav-link">Password</a></li>
+            <li><a class="nav-link">Progress Bars</a></li>
+            <li><a class="nav-link">Radio Buttons</a></li>
+            <li><a class="nav-link">Select</a></li>
+            <li><a class="nav-link">Sidenav</a></li>
+          </ul>
+        </section>
+      </section>
     </nav>
-  </div> -->
-  <div class="content-container">
-    <div class="content-area">
-      <app-product-list></app-product-list>
-    </div>
   </div>
 </clr-main-container>

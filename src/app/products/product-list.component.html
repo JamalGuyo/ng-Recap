@@ -47,7 +47,9 @@
             </td>
             <td class="left">{{ product.releaseDate }}</td>
             <td class="left">{{ product.price | currency: 'Ksh ' }}</td>
-            <td class="left">{{ product.starRating }}</td>
+            <td class="left">
+              <app-star [rating]="product.starRating"></app-star>
+            </td>
           </tr>
         </tbody>
       </table>

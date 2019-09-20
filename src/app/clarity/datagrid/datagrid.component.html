@@ -1,0 +1,29 @@
+<clr-datagrid>
+  <clr-dg-column>Images</clr-dg-column>
+  <clr-dg-column>Product Name</clr-dg-column>
+  <clr-dg-column>Product Code</clr-dg-column>
+  <clr-dg-column>Release Date</clr-dg-column>
+  <clr-dg-column>Price</clr-dg-column>
+  <clr-dg-column>Rating</clr-dg-column>
+
+  <clr-dg-row *ngFor="let product of products">
+    <clr-dg-cell
+      ><img
+        [src]="product.imageUrl"
+        [title]="product.productName"
+        [style.width.px]="imageWidth"
+        [style.margin.px]="imageMargin"
+    /></clr-dg-cell>
+    <clr-dg-cell>{{ product.productName | uppercase }}</clr-dg-cell>
+    <clr-dg-cell>
+      {{ product.productCode | lowercase | convertToSpaces: '-' }}</clr-dg-cell
+    >
+    <clr-dg-cell>{{ product.releaseDate }}</clr-dg-cell>
+    <clr-dg-cell>{{ product.price | currency: 'Ksh ' }}</clr-dg-cell>
+    <clr-dg-cell
+      ><app-star [rating]="product.starRating"></app-star
+    ></clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>{{ products.length }} products</clr-dg-footer>
+</clr-datagrid>
