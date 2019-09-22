@@ -1,0 +1,16 @@
+<div class="card" *ngIf="product">
+  <div class="card-header">
+    show something
+  </div>
+  <div class="card-block">
+    <ul class="list">
+      <li>{{ product.productName }}</li>
+      <li>{{ product.productDescription }}</li>
+      <li>{{ product.releaseDate }}</li>
+      <li>{{ product.starRating }}</li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary" (click)="onBack()">Back</button>
+  </div>
+</div>

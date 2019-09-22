@@ -12,11 +12,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CheckboxesComponent } from './clarity/checkboxes/checkboxes.component';
 import { DatagridComponent } from './clarity/datagrid/datagrid.component';
 import { DatepickerComponent } from './clarity/datepicker/datepicker.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'products-list', component: ProductListComponent },
+  { path: 'products-list/:id', component: ProductDetailComponent },
   { path: 'clr-accordion', component: AccordionComponent },
   { path: 'clr-alerts', component: AlertsComponent },
   { path: 'clr-badges', component: BadgesComponent },

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -20,15 +21,34 @@ import { CheckboxesComponent } from './clarity/checkboxes/checkboxes.component';
 import { DatagridComponent } from './clarity/datagrid/datagrid.component';
 import { DatepickerComponent } from './clarity/datepicker/datepicker.component';
 import { DropdownsComponent } from './clarity/dropdowns/dropdowns.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent, ConvertToSpacesPipe, StarComponent, WelcomeComponent, AccordionComponent, AlertsComponent, BadgesComponent, ButtonsComponent, ButtonGroupComponent, CardsComponent, CheckboxesComponent, DatagridComponent, DatepickerComponent, DropdownsComponent],
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    ConvertToSpacesPipe,
+    StarComponent,
+    WelcomeComponent,
+    AccordionComponent,
+    AlertsComponent,
+    BadgesComponent,
+    ButtonsComponent,
+    ButtonGroupComponent,
+    CardsComponent,
+    CheckboxesComponent,
+    DatagridComponent,
+    DatepickerComponent,
+    DropdownsComponent,
+    ProductDetailComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
